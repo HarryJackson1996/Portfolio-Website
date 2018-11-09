@@ -76,7 +76,7 @@ body {
 
 /* 
  * menu span selector for styling span elements.
- * Burger-Menu Functionality.
+ * Burger-Menu functionality.
  */
 .menu-bar span {     
     position: absolute;
@@ -105,7 +105,7 @@ body {
 
 /*
  * Define functionality for script to target.
- * if menu is clicked, call CSS and translate first span object.
+ * if menu-bar is clicked, call CSS and translate first span object.
  */
 .menu-bar.active span:nth-child(1) {
     transform: translateY(0.0px);
@@ -113,7 +113,7 @@ body {
 
 /*
  * Define functionality for script to target.
- * if menu is clicked, call CSS and translate second span object.
+ * if menu-bar is clicked, call CSS and translate second span object.
  */
 .menu-bar.active span:nth-child(2) {
     transform: translateY(-0.0px);
