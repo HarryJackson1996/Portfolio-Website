@@ -37,22 +37,91 @@ body {
 }
 
 /*
- * Section-1 od selector for specific styling
+ * Section-1 id selector for specific styling.
  */
 #section-1 {
     background-color: #024493;
 }
  
 /*
- * Section-2 id selector for specific styling
+ * Section-2 id selector for specific styling.
  */  
 #section-2 {
     background-color: #289343;
 }
 
 /*
- * Section-3 id selector for specific styling
+ * Section-3 id selector for specific styling.
  */
 #section-3 {
     background-color: #999994;
 }
+
+/*
+ * Vertical main menu.
+ * fixed menu so it moves onScroll.
+ */
+.menu
+{
+    position: fixed;
+    left: 0;
+    top: 0;
+    left: 0%;
+    width: 70px;
+    height: 100%;
+    background: #000000;
+    cursor: pointer;
+    box-sizing: border-box;
+    z-index: 150;
+}
+
+/* 
+ * menu span selector for styling span elements.
+ * Burger-Menu Functionality.
+ */
+.menu span
+{     
+    position: absolute;
+    width:35px;
+    height: 2px;
+    background: #fff;
+    display: block;
+    top: 26px;
+    left: 16.25px;
+    transition: 0.5s;   
+}
+
+/*
+ * Select first span object in list.
+ */
+.menu span:nth-child(1)
+{
+    transform: translateY(-5px);
+}
+
+/*
+ * Select second span object in list.
+ */
+.menu span:nth-child(2)
+{
+    transform: translateY(5px);
+}
+
+/*
+ * Define functionality for script to target.
+ * if menu is clicked, call CSS and translate first span object.
+ */
+.menu.active span:nth-child(1)
+{
+    transform: translateY(0.0px);
+}
+
+/*
+ * Define functionality for script to target.
+ * if menu is clicked, call CSS and translate second span object.
+ */
+.menu.active span:nth-child(2)
+{
+    transform: translateY(-0.0px);
+}
+
