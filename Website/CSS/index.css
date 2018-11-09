@@ -1,11 +1,58 @@
             
+/* 
+ * CSS selector applied to all elements
+ */
 * {
     margin: 0;
     padding: 0;
 }
-           
+
+/* 
+ * CSS selector applied to all body elements
+ */    
 body {   
     margin:0;
     padding:0;
     background: #171717;          
+}
+
+/* 
+ * Div container for each section wrapper.
+ * As we want three Full-screen sections, height and width set to 100%.
+ */
+.full-height {
+    display: table;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+}
+
+/* 
+ * Wrapper for each section defined as a table cell
+ * For one table there is 3 full screen cells.
+ */
+.content-wrapper {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+/*
+ * Section-1 od selector for specific styling
+ */
+#section-1 {
+    background-color: #024493;
+}
+ 
+/*
+ * Section-2 id selector for specific styling
+ */  
+#section-2 {
+    background-color: #289343;
+}
+
+/*
+ * Section-3 id selector for specific styling
+ */
+#section-3 {
+    background-color: #999994;
 }
