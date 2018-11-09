@@ -12,7 +12,7 @@
  */    
 body {   
     margin:0;
-    padding:0;
+    padding: 0;
     background: #171717;          
 }
 
@@ -58,11 +58,10 @@ body {
 }
 
 /*
- * Vertical main menu.
+ * Vertical menu bar.
  * fixed menu so it moves onScroll.
  */
-.menu
-{
+.menu-bar {
     position: fixed;
     left: 0;
     top: 0;
@@ -79,8 +78,7 @@ body {
  * menu span selector for styling span elements.
  * Burger-Menu Functionality.
  */
-.menu span
-{     
+.menu-bar span {     
     position: absolute;
     width:35px;
     height: 2px;
@@ -94,16 +92,14 @@ body {
 /*
  * Select first span object in list.
  */
-.menu span:nth-child(1)
-{
+.menu-bar span:nth-child(1) {
     transform: translateY(-5px);
 }
 
 /*
  * Select second span object in list.
  */
-.menu span:nth-child(2)
-{
+.menu-bar span:nth-child(2) {
     transform: translateY(5px);
 }
 
@@ -111,8 +107,7 @@ body {
  * Define functionality for script to target.
  * if menu is clicked, call CSS and translate first span object.
  */
-.menu.active span:nth-child(1)
-{
+.menu-bar.active span:nth-child(1) {
     transform: translateY(0.0px);
 }
 
@@ -120,8 +115,94 @@ body {
  * Define functionality for script to target.
  * if menu is clicked, call CSS and translate second span object.
  */
-.menu.active span:nth-child(2)
-{
+.menu-bar.active span:nth-child(2) {
     transform: translateY(-0.0px);
 }
 
+/*
+ * Main menu: when menu-bar is clicked the menu 'opens'
+ * Similar to menu-bar position is fixed.
+ * We hide menu off screen (-100%).
+ */
+.menu {
+    position: fixed;
+    top:0;
+    left:0;
+    width:270px;
+    height:100%;
+    background: #000000;
+    transition: 1.1s;
+    transform: translateX(-100%);
+    z-index: 8;
+}
+
+/*
+ * When JQuery function is instantiated, this query is called.
+ * main menu tranlates into the viewport.
+ */
+.menu.active {
+    transform: translateX(0);
+}
+
+/*
+ * menu-align is div wrapper for the li items.
+ * centers ul horizontally + vertically in menu.
+ */
+.menu-align {
+    display: table;
+    width: 70%;
+    height: 100vh;
+    background: #000000;
+    margin: auto;
+    margin-right: 0;
+}
+
+/*
+ * menu's ul selector
+ */
+.menu ul {
+  display: table-cell;
+  text-align: left;
+  vertical-align: middle;
+}
+
+/*
+ * menu's ul li selector
+ * Sets font size etc for items in list.
+ */
+.menu ul li {
+    font-size: 1.65em;
+    display: inline;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI';
+    list-style:none;
+    margin: 10px;
+}
+
+/*
+ * Style each li (list item) anchor.
+ */
+.menu ul li a {
+    display: block;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-decoration: none;
+}
+
+/*
+ * Mouse hover colour animation for anchors (li items).
+ */
+.menu ul li a:hover {
+    color: darkorange;
+    transition: 0.5s;
+}
+
+/*
+ * Targets the small text before the anchors in the menu.
+ */
+.min-menuText {
+    font-size: 0.55em;
+    margin: 0px auto;
+    color: #303030;
+    font-weight: 500;
+}
