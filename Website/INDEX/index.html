@@ -22,8 +22,22 @@
 
     <!-- Bar that is always visible for opening the nav menu -->
     <div class="menu-bar">
-        <span></span>
-        <span></span>
+
+        <div class="menuClick">
+            <span></span>
+            <span></span>
+        </div>
+        
+        <div class="upDownDiv">
+                <h1 class=navText>Nav</h1>
+            </div>   
+            
+        <div class="vList">
+            <div id="section-scroller-button">
+            <i class="fas fa-caret-down"></i>
+            </div>
+        </div>
+
     </div>
 
     <!-- Navigation menu that translates into the viewpoint when onClick script is triggered -->
@@ -58,10 +72,37 @@
         </div>
     </div>
 
+
+     <!-- Smooth Anchor scrolling -->
+    <script type="text/javascript">
+        $(function() {
+            $('a').click(function() {
+            var href = $(this).attr("href");
+            $('html, body').animate({scrollTop: $(href).offset().top}, 800);
+            $('.menu-bar').toggleClass('active');
+        return false;
+        });
+
+    });
+    </script>
+
+    <!-- Smooth fullpage scrolling -->
+    <!-- Copyright (c) 2017 Rishabh Rajgarhia | https://github.com/rishabh-rajgarhia -->
+    <script src="../JS/sectionScroller.js"></script>
+        <script>
+            $(function() { 
+                $(".section-scroll").sectionScroller({
+                scrollerButton: "#section-scroller-button",
+                scrollType: "swing",
+                scrollDuration: 900,
+           });
+      });
+    </script>
+
     <!-- JQuery for opening and closing navigation menu -->
     <script type="text/javascript">
         $(document).ready(function(){
-            $('.menu-bar').click(function(){
+            $('.menuClick').click(function(){
                 $('.menu').toggleClass('active');
                 $('.menu-bar').toggleClass('active');
             });
