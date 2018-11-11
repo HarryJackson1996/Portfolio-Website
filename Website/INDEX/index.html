@@ -20,19 +20,23 @@
         
 <header>
 
-    <!-- Bar that is always visible for opening the nav menu -->
+    <!-- Bar that is always visible for opening the nav menu and holding nav elements -->
     <div class="menu-bar">
 
-        <div class="menuClick">
+        <!-- Layer above menu-bar set to 90% height -->
+        <!-- When menu button is clicked navigation menu does not open! -->
+        <div class="menuClick-div">
             <span></span>
             <span></span>
         </div>
         
-        <div class="upDownDiv">
-                <h1 class=navText>Nav</h1>
-            </div>   
-            
-        <div class="vList">
+        <!-- Div for menu text -->
+        <div class="menu-navText-div">
+                <h1 class=menu-text>Nav</h1>
+        </div>  
+
+        <!-- Div for menu button -->
+        <div class="menu-button-div">
             <div id="section-scroller-button">
             <i class="fas fa-caret-down"></i>
             </div>
@@ -86,23 +90,24 @@
     });
     </script>
 
-    <!-- Smooth fullpage scrolling -->
     <!-- Copyright (c) 2017 Rishabh Rajgarhia | https://github.com/rishabh-rajgarhia -->
     <script src="../JS/sectionScroller.js"></script>
-        <script>
-            $(function() { 
-                $(".section-scroll").sectionScroller({
-                scrollerButton: "#section-scroller-button",
-                scrollType: "swing",
-                scrollDuration: 900,
-           });
-      });
+
+    <!-- Smooth fullpage scrolling for button onClick-->
+    <script type="text/javascript">
+        $(function() { 
+            $(".section-scroll").sectionScroller({
+            scrollerButton: "#section-scroller-button",
+            scrollType: "swing",
+            scrollDuration: 900,
+            });
+        });
     </script>
 
     <!-- JQuery for opening and closing navigation menu -->
     <script type="text/javascript">
         $(document).ready(function(){
-            $('.menuClick').click(function(){
+            $('.menuClick-div').click(function(){
                 $('.menu').toggleClass('active');
                 $('.menu-bar').toggleClass('active');
             });

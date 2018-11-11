@@ -1,4 +1,5 @@
-            
+/**************************** START: ALL CSS QUERIES FOR PAGE LAYOUT / STYLING! ****************************/
+           
 /* 
  * CSS selector applied to all elements
  */
@@ -56,6 +57,11 @@ body {
 #section-3 {
     background-color: #999994;
 }
+
+/**************************** END: ALL CSS QUERIES FOR PAGE LAYOUT / STYLING! ****************************/
+
+
+/**************************** START: ALL CSS QUERIES FOR MENU LAYOUT / STYLING! ****************************/
 
 /*
  * Vertical menu bar.
@@ -207,7 +213,12 @@ body {
     font-weight: 500;
 }
 
-.menuClick
+/*
+ * Layer above menu. contains all menu items.
+ * Height set to 90% so clicking button does not also open menu!
+ * Button positioned in top 10% remaining space.
+ */
+.menuClick-div
 {
     position: absolute;
     z-index: 50;
@@ -215,7 +226,10 @@ body {
     height: 90%;
 }
 
-.upDownDiv
+/*
+ *  Div wrapper for menu-bar text
+ */
+.menu-navText-div
 {
     position: absolute;
     text-align: center;
@@ -224,7 +238,10 @@ body {
     top: 50%; left: 0; bottom: 0; right: 0;
 }
 
-.navText
+/*
+ * Styles the "nav" text on the menu-bar
+ */
+.menu-text
 {
     transform: rotate(-90deg);
     display: block;
@@ -237,7 +254,10 @@ body {
     letter-spacing: 3px;
 }
 
-.vList
+/*
+ * Menu-bar wrapper for containing the onClick (smooth scrolling) button 
+ */
+.menu-button-div
 {
     text-align: center;
     z-index: 1;
@@ -251,7 +271,9 @@ body {
     top: 90%; left: 0; bottom: 0; right: 0;
 }
 
-
+/*
+ * Styles the button itself.
+ */
 #section-scroller-button {
     position: absolute;
     bottom: 20px;
@@ -266,24 +288,38 @@ body {
     transition: 0.6s;
 }
 
+/*
+ * Sets basic animation transition time for button.
+ */
 .fa-caret-down
 {
     transition: 0.6s;     
 }
 
+/*
+ * onClick button hover colour.
+ */
 .fa-caret-down:hover
 {
     color:#ffee10;
     transition: 0.9s;
 }
 
+/*
+ * disable hover effect on touch devices
+ */
 html.can-touch .fa-caret-down:hover{
-    background: none; /* disable hover effect on touch devices */
+    background: none; 
 }
 
+/*
+ * rotates button once user reaches final section of content.
+ */
 #section-scroller-button.rotate .fa-caret-down {
     -webkit-transform: rotate(-180deg);
     -ms-transform: rotate(-180deg);
     transform: rotate(-180deg);
     transition: 0.6s;
 }
+
+/**************************** END: ALL CSS QUERIES FOR MENU FUNCTIONALITY / STYLING! ****************************/
