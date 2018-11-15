@@ -77,6 +77,7 @@ body {
     background: #000000;
     cursor: pointer;
     box-sizing: border-box;
+    transition: 1.0s;    
     z-index: 150;
 }
 
@@ -341,6 +342,7 @@ html.can-touch .fa-caret-down:hover{
     text-transform: uppercase;
     letter-spacing: 3px;
     line-height: 0.9em;
+    transition: 0.9s
 }
 
 /*
@@ -355,6 +357,7 @@ html.can-touch .fa-caret-down:hover{
     text-transform: uppercase;
     letter-spacing: 2px;
     margin: 40px auto;
+    transition: 0.9s;
 }
 
 /**************************** END: ALL CSS QUERIES FOR SECTION-1 CONTENT FUNCTIONALITY / STYLING! ****************************/
@@ -508,6 +511,95 @@ html.can-touch .fa-caret-down:hover{
 
 /************************************* START: ALL MEDIA QUERIES FUNCTIONALITY / STYLING! *************************************/
 
+@media (max-width: 1268px)
+{
+}
+
+/*Media Query for computer Screen Resizing*/
+@media (max-width: 1068px)
+{
+}
+
+/*Media Query for computer Screen Resizing*/
+@media (max-width: 868px)
+{
+}
+
+/*Media Query for computer Screen Resizing and Ipad support*/
+@media (max-width: 768px)
+{   
+    .menu-bar
+    {
+        width: 100%;
+        height: 56px;
+        transition: 0.9s;    
+    }
+
+    .menu
+    {
+        width:100%;
+        height:100%;
+        opacity: 0.9;
+        transition: 0.9s;
+        transform: translateY(-100%);
+        z-index: 10;
+    }
+
+    .menu-align
+    {
+        margin: auto;
+    }
+    
+    .menu ul
+    {
+      display: table-cell;
+      text-align: center;
+      vertical-align: middle;
+    }
+    
+    .menu-navText-div
+    {
+        transform: rotate(90deg);
+        transition: 0.9s;
+        opacity: 0;
+    }
+    
+    .menu-button-div
+    {
+        position: relative;
+        top: 91vh; left: 0; bottom: 0; right: 0;
+        color: black;
+    }
+
+    .vList a
+    {
+        color: #000;
+        transition: 0.5s;
+    }
+
+    .title-text
+    {
+        font-size: 6em;
+        z-index: 1; 
+        transition: 0.9s;
+    }
+
+    .port-text
+    {
+        font-size: 1em;
+        transition: 0.9s;
+    }
+}
+
+/*Phone Support*/
+@media (max-width: 480px)
+{
+}
+
+/*More Mobile support*/
+@media (max-width: 400px)
+{
+}
 
 
 
