@@ -168,14 +168,13 @@
         </div>
     </div>
 
-
     <!-- Smooth Anchor scrolling -->
     <script type="text/javascript">
         $(function() {
             $('a').click(function() {
             var href = $(this).attr("href");
             $('html, body').animate({scrollTop: $(href).offset().top}, 800);
-            $('.menu-bar').toggleClass('active');
+            $('.menu').toggleClass('active');
         return false;
         });
 
@@ -199,12 +198,24 @@
     <!-- JQuery for opening and closing navigation menu -->
     <script type="text/javascript">
         $(document).ready(function(){
-            $('.menuClick-div').click(function(){
-                $('.menu').toggleClass('active');
-                $('.menu-bar').toggleClass('active');
-            });
-        });
+            var hasBeenClicked = false;
+            $('.menuClick-div, .menu-text').click(function(){
+                if(hasBeenClicked==false){
+                    $('.menu').toggleClass('active');
+                    $('.menu-bar').toggleClass('active');
+                    $(".menu-text").fadeOut(500);
+                    hasBeenClicked = true;
+                } 
+                else if(hasBeenClicked==true){
+                    $('.menu').toggleClass('active');
+                    $('.menu-bar').toggleClass('active');
+                    $(".menu-text").fadeIn(1000);
+                    hasBeenClicked = false;
+                } 
+            })
+        })
     </script>   
+ 
  
 </body>
 </html>
