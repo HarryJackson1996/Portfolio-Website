@@ -361,7 +361,7 @@ html.can-touch .fa-caret-down:hover{
 
 /**************************** START: ALL CSS QUERIES FOR SECTION-2 CONTENT FUNCTIONALITY / STYLING! ****************************/
 
-
+/* container for all cards: sets layout and columns/rows */
 .cardLayout {
     display: grid;
     grid-template-columns: auto auto auto;
@@ -372,6 +372,7 @@ html.can-touch .fa-caret-down:hover{
     max-height: 90%;
 }
 
+/* Defines the card element for all cards */
 .card {
     position: relative;
     width: 300px;
@@ -381,7 +382,7 @@ html.can-touch .fa-caret-down:hover{
     transform-style: preserve-3d;
 }
 
-/* Style the front side (fallback if image is missing) */
+/* Wrapper for frontContent */
 .card-front {
     background: #000;
     backface-visibility: hidden;
@@ -393,11 +394,18 @@ html.can-touch .fa-caret-down:hover{
     height: 100%;
 }
 
-.card:hover .card-front
-{
+/* card hover: rotate card 180deg on y-axis */
+.card:hover .card-front {
     transform: rotateY(-180deg);
 }
 
+/* Wrapper for translating frontContent in z-axis (3D effect) */
+.frontContent {
+    transform: translatez(70px) scale(0.8);
+    line-height: 2.5em;
+}
+
+/* card frontContent h1 styling */
 .frontContent h1 {
     position: relative;
     color: #fff;
@@ -406,12 +414,7 @@ html.can-touch .fa-caret-down:hover{
     letter-spacing: 3px;
 }
 
-.frontContent {
-    transform: translatez(70px) scale(0.8);
-    line-height: 2.5em;
-}
-
-/* Style the back side */
+/* Wrapper for backContent */
 .card-back {
     background: #fff;
     backface-visibility: hidden;
@@ -424,17 +427,20 @@ html.can-touch .fa-caret-down:hover{
     border: 3px solid #000;
 }
 
+/* Back of card hover: rotate card back to 0 */
 .card:hover .card-back 
 {
     transform: rotateY(0deg);
 }
 
+/* Wrapper for translating backContent in z-axis (3D effect) */
 .backContent 
 {
     transform: translatez(70px) scale(0.8);
     position: absolute;
 }
 
+/* Back of card content: paragraph styling */
 .backContent p
 {
     position: relative;
@@ -446,6 +452,7 @@ html.can-touch .fa-caret-down:hover{
     text-transform: uppercase;
 }
 
+/* Back of card: button styling */
 .backContent .infoBtn {
     position: relative;
     display: inline-block;
@@ -455,8 +462,8 @@ html.can-touch .fa-caret-down:hover{
     text-align: center;
 }
 
-.backContent .infoBtn h2 
-{
+/* Back of card: button heading styling */
+.backContent .infoBtn h2 {
     color: #000;
     font-size: 1.5em;
     text-transform: uppercase;
@@ -464,6 +471,7 @@ html.can-touch .fa-caret-down:hover{
     margin: 10px 10px 10px  10px;
 }
 
+/* backContent: button hover effect */
 .backContent .infoBtn:hover
 {
     color:#ffee10;
