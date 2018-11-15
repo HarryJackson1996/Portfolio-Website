@@ -366,9 +366,9 @@ html.can-touch .fa-caret-down:hover{
     display: grid;
     grid-template-columns: auto auto auto;
     position: relative;
-    margin: 0 auto;
+    margin: 0px auto;
     padding: 40px; 
-    max-width: 80%;
+    max-width: 75%;
     max-height: 90%;
 }
 
@@ -409,7 +409,10 @@ html.can-touch .fa-caret-down:hover{
 .frontContent h1 {
     position: relative;
     color: #fff;
-    font-size: 1.2em;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 1.1em;
+    margin: 10px auto;
     text-transform: uppercase;
     letter-spacing: 3px;
 }
@@ -424,25 +427,23 @@ html.can-touch .fa-caret-down:hover{
     width: 100%;
     height: 100%;
     transform: rotateY(180deg);
-    border: 3px solid #000;
 }
 
 /* Back of card hover: rotate card back to 0 */
-.card:hover .card-back 
-{
+.card:hover .card-back {
     transform: rotateY(0deg);
 }
 
 /* Wrapper for translating backContent in z-axis (3D effect) */
-.backContent 
-{
+.backContent {
     transform: translatez(70px) scale(0.8);
     position: absolute;
+    left: 0;
+    right: 0;
 }
 
 /* Back of card content: paragraph styling */
-.backContent p
-{
+.backContent p {
     position: relative;
     width: 90%;
     height: 50%;
@@ -455,10 +456,9 @@ html.can-touch .fa-caret-down:hover{
 /* Back of card: button styling */
 .backContent .infoBtn {
     position: relative;
-    display: inline-block;
-    margin: 40px auto;
-    border-radius: 20px;
+    width: 50%;
     border: 3px solid black;
+    margin: 100px auto;
     text-align: center;
 }
 
@@ -469,29 +469,17 @@ html.can-touch .fa-caret-down:hover{
     text-transform: uppercase;
     letter-spacing: 3px;
     margin: 10px 10px 10px  10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
 }
 
 /* backContent: button hover effect */
-.backContent .infoBtn:hover
-{
+.backContent .infoBtn:hover {
     color:#ffee10;
-    box-shadow: 0 0 50px #ffee10;
+    box-shadow: 0 0px 0px #ffee10;
     background:#ffee10;
     transition: 0.5s;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /**************************** END: ALL CSS QUERIES FOR SECTION-2 CONTENT FUNCTIONALITY / STYLING! ****************************/
 
@@ -517,3 +505,23 @@ html.can-touch .fa-caret-down:hover{
 
 
 /**************************** END: ALL CSS QUERIES FOR SECTION-3 CONTENT FUNCTIONALITY / STYLING! ****************************/
+
+/************************************* START: ALL MEDIA QUERIES FUNCTIONALITY / STYLING! *************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/************************************* END: ALL MEDIA QUERIES FUNCTIONALITY / STYLING! *************************************/
