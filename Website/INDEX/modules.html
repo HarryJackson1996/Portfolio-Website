@@ -13,7 +13,6 @@
     <!-- jQuery library -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="../JS/index.js"></script>
-    <script src="../JS/jquery.transit.js"></script> 
 
         
     <title>Module  Breakdown</title>
@@ -127,6 +126,8 @@
             var href = $(this).attr("href");
             $('html, body').animate({scrollTop: $(href).offset().top}, 800);
             $('.menu').toggleClass('active');
+            $('.min-menuText').toggleClass('slide');
+
         return false;
         });
 
@@ -162,7 +163,7 @@
             $('.menuClick-div, .menu-text').click(function(){
                 if(hasBeenClicked==false){
                     $('.menu').toggleClass('active');
-                    $('.min-menuText').transition({ x: 0, delay: 700, easing:'ease' });
+                    $('.min-menuText').toggleClass('slide').delay(5000);
                     $('.menu-bar').toggleClass('active');
                     $(".menu-text").fadeOut(500);
                     hasBeenClicked = true;
@@ -171,6 +172,8 @@
                     $('.menu').toggleClass('active');
                     $('.menu-bar').toggleClass('active');
                     $(".menu-text").fadeIn(1000);
+                    $('.min-menuText').toggleClass('slide').delay(5000);
+
                     hasBeenClicked = false;
                 } 
             })
