@@ -49,7 +49,7 @@
     <div class="menu">
         <div class="menu-align">
             <ul>
-                <li class="listStyle"><h3 class="min-menuText">RETURN</h3><a href='#section-1'>Home</a></li>
+                <li class="listStyle"><h3 class="min-menuText">To</h3><a href='#section-1'>Top</a></li>
                 <li class="listStyle"><h3 class="min-menuText">MY</h3><a href='#section-2'>Work</a></li>
                 <li class="listStyle"><h3 class="min-menuText">MORE</h3><a href='#section-3'>About Me</a></li>
             </ul>
@@ -58,6 +58,7 @@
   
 
 </header>
+
 
     <!-- Fullscreen section 1: Introductory Section -->
 	<div class="full-height section-scroll" id="section-1">
@@ -83,7 +84,7 @@
                     </div>
                     <div class="card-back"> <!-- card back wrapper -->
                         <div class="backContent"> <!-- back card content -->
-                            <div class="infoBtn"><h2>More</h2></div>
+                            <div class="infoBtn"><a href="mcomp.html"><h2>More</h2></a></div>
                         </div>
                     </div>
                 </div>
@@ -97,7 +98,7 @@
                     </div>
                     <div class="card-back">
                         <div class="backContent">
-                            <div class="infoBtn"><h2>More</h2></div>
+                            <div class="infoBtn"><a href="bsc.html"><h2>More</h2></a></div>
                         </div>
                     </div>
                 </div>
@@ -111,7 +112,7 @@
                     </div>
                     <div class="card-back">
                         <div class="backContent">
-                            <div class="infoBtn"><h2>More</h2></div>
+                            <div class="infoBtn"><a href="modules.html"><h2>More</h2></a></div>
                         </div>
                     </div>
                 </div>
@@ -125,7 +126,7 @@
                     </div>
                     <div class="card-back">
                         <div class="backContent">
-                            <div class="infoBtn"><h2>More</h2></div>
+                            <div class="infoBtn"><a href="mobileApp.html"><h2>More</h2></a></div>
                         </div>
                     </div>
                 </div>
@@ -139,7 +140,7 @@
                     </div>
                     <div class="card-back">
                         <div class="backContent">
-                            <div class="infoBtn"><h2>More</h2></div>
+                            <div class="infoBtn"><a href="https://github.com/HarryJackson1996/"><h2>More</h2></a></div>
                         </div>
                     </div>
                 </div>
@@ -180,6 +181,27 @@
 
     });
     </script>
+    
+    <script type="text/javascript">
+    $(document).on("click", "a", function () {
+    // get the href attribute
+    var newUrl = $(this).attr("href");
+
+    // veryfy if the new url exists or is a hash
+    if (!newUrl || newUrl[0] === "#") {
+        // set that hash
+        location.hash = newUrl;
+        return;
+    }
+    // now, fadeout the html (whole page)
+    $("html").fadeOut(function () {
+        // when the animation is complete, set the new location
+        location = newUrl;
+    });
+    // prevent the default browser behavior.
+    return false;
+});
+</script>
 
     <!-- Copyright (c) 2017 Rishabh Rajgarhia | https://github.com/rishabh-rajgarhia -->
     <script src="../JS/sectionScroller.js"></script>
