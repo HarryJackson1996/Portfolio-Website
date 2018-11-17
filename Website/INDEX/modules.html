@@ -127,32 +127,18 @@
             $('html, body').animate({scrollTop: $(href).offset().top}, 800);
             $('.menu').toggleClass('active');
             $('.min-menuText').toggleClass('slide');
-
         return false;
         });
 
     });
     </script>
+ 
+    <script type="text/javascript">
+        $(document).ready(function(){
 
-    </script>
-        <script type="text/javascript">
-        $(document).on("click", "a", function () {
-        // get the href attribute
-        var newUrl = $(this).attr("href");
-
-        // veryfy if the new url exists or is a hash
-        if (!newUrl || newUrl[0] === "#") {
-            // set that hash
-            location.hash = newUrl;
-            return;
-        }
-        // now, fadeout the html (whole page)
-        $("html").fadeOut(function () {
-            // when the animation is complete, set the new location
-            location = newUrl;
-        });
-        // prevent the default browser behavior.
-        return false;
+        /*! Fades in page on load */
+        $('body').css('display', 'none');
+        $('body').fadeIn(1500);
         });
     </script>
 
@@ -166,6 +152,7 @@
                     $('.min-menuText').toggleClass('slide').delay(5000);
                     $('.menu-bar').toggleClass('active');
                     $(".menu-text").fadeOut(500);
+                    $(".menu ul li").fadeIn(1500);
                     hasBeenClicked = true;
                 } 
                 else if(hasBeenClicked==true){
@@ -173,7 +160,6 @@
                     $('.menu-bar').toggleClass('active');
                     $(".menu-text").fadeIn(1000);
                     $('.min-menuText').toggleClass('slide').delay(5000);
-
                     hasBeenClicked = false;
                 } 
             })
