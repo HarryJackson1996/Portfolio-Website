@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Latest compiled and minified CSS -->
+
+    <!-- Link to my style sheet -->
+    <link rel="stylesheet" type="text/css" href="../CSS/mcomp.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+      
+    <!-- jQuery library -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="../JS/index.js"></script>
+
+        
+    <title>MComp Project</title>
+         
+</head>
+<body>
+        
+<header>
+
+    <!-- Bar that is always visible for opening the nav menu and holding nav elements -->
+    <div class="menu-bar">
+
+        <!-- Layer above menu-bar set to 90% height -->
+        <!-- When menu button is clicked navigation menu does not open! -->
+        <div class="menuClick-div">
+            <span></span>
+            <span></span>
+        </div>
+        
+        <!-- Div for menu text -->
+        <div class="menu-navText-div">
+                <h1 class=menu-text>Nav</h1>
+        </div>  
+
+        <!-- Div for menu button -->
+        <div class="menu-button-div">
+            <div id="section-scroller-button">
+            <i class="fas fa-caret-down"></i>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Navigation menu that translates into the viewpoint when onClick script is triggered -->
+    <div class="menu">
+        <div class="menu-align">
+            <ol>
+                <ul class="module-nav"><h1 class="min-menuText">Return</h1>
+                    <li class="listStyle"><a href='index.html'>Home</a></li>
+                    <li class="listStyle"><a href='bsc.html'>BSc Project</a></li>
+                    <li class="listStyle"><a href='modules.html'>Modules</a></li>
+                    <li class="listStyle"><a href='app.html'>Mobile App</a></li>
+                    <li class="listStyle"><a href='current.html'>Current Work</a></li>
+                    <li class="listStyle"><a href='https://github.com/HarryJackson1996/'>GitHub</a></li>
+                </ul>
+
+                <ul class="module-nav"><h1 class="min-menuText">MComp Project</h1>
+                    <li class="listStyle"><a href='#section-2'>Aims</a></li>
+                    <li class="listStyle"><a href='#section-3'>Implementation</a></li>
+                    <li class="listStyle"><a href='#section-4'>Provability</a></li>
+                    <li class="listStyle"><a href='#section-5'>Review</a></li>
+                </ul>
+            </ol>
+        </div>
+    </div>
+  
+
+</header>
+
+
+    <!-- Fullscreen section 1: Introductory Section -->
+	<div class="full-height section-scroll" id="section-1">
+        <div class="content-wrapper">
+                <!-- Section 1: Content -->       
+                <h1 class="title-text">Masters</h1>
+                <h1 class="title-text">Project</h1>
+        </div>
+    </div>
+
+    <!-- Fullscreen section 2: Portfolio Link Section -->
+    <div class="full-height section-scroll" id="section-2">
+        <div class="content-wrapper">           
+        </div>
+    </div>
+
+    <!-- Fullscreen section 3: About Section -->
+    <div class="full-height section-scroll" id="section-3">
+        <div class="content-wrapper">
+        </div>
+    </div>
+
+    <!-- Fullscreen section 3: About Section -->
+    <div class="full-height section-scroll" id="section-4">
+        <div class="content-wrapper">
+        </div>
+    </div>
+
+    <!-- Fullscreen section 3: About Section -->
+    <div class="full-height section-scroll" id="section-5">
+        <div class="content-wrapper">
+        </div>
+    </div>
+
+     <!-- Copyright (c) 2017 Rishabh Rajgarhia | https://github.com/rishabh-rajgarhia -->
+     <script src="../JS/sectionScroller.js"></script>
+
+     <!-- Smooth fullpage scrolling for button onClick-->
+     <script type="text/javascript">
+         $(function() { 
+             $(".section-scroll").sectionScroller({
+             scrollerButton: "#section-scroller-button",
+             scrollType: "swing",
+             scrollDuration: 900,
+             });
+         });
+     </script>
+ 
+
+    <!-- Smooth Anchor scrolling -->
+    <script type="text/javascript">
+        $(function() {
+            $('a').click(function() {
+            var href = $(this).attr("href");
+            $('html, body').animate({scrollTop: $(href).offset().top}, 800);
+            $('.menu').toggleClass('active');
+            $('.min-menuText').toggleClass('slide');
+        return false;
+        });
+
+    });
+    </script>
+ 
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+        /*! Fades in page on load */
+        $('body').css('display', 'none');
+        $('body').fadeIn(1500);
+        });
+    </script>
+
+    <!-- JQuery for opening and closing navigation menu -->
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var hasBeenClicked = false;
+            $('.menuClick-div, .menu-text').click(function(){
+                if(hasBeenClicked==false){
+                    $('.menu').toggleClass('active');
+                    $('.min-menuText').toggleClass('slide').delay(5000);
+                    $('.menu-bar').toggleClass('active');
+                    $(".menu-text").fadeOut(500);
+                    $(".menu ul li").fadeIn(1500);
+                    hasBeenClicked = true;
+                } 
+                else if(hasBeenClicked==true){
+                    $('.menu').toggleClass('active');
+                    $('.menu-bar').toggleClass('active');
+                    $(".menu-text").fadeIn(1000);
+                    $('.min-menuText').toggleClass('slide').delay(5000);
+                    hasBeenClicked = false;
+                } 
+            })
+        })
+    </script>   
+ 
+ 
+</body>
+</html>
+

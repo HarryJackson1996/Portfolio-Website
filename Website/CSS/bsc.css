@@ -1,0 +1,504 @@
+/**************************** START: ALL CSS QUERIES FOR PAGE LAYOUT / STYLING! ****************************/
+           
+/* 
+ * CSS selector applied to all elements
+ */
+ * {
+    margin: 0;
+    padding: 0;
+    font-family:'Montserrat', sans-serif;   
+    font-weight: 500;
+
+}
+
+/* 
+ * CSS selector applied to all body elements
+ */    
+body {   
+    margin:0;
+    padding: 0;
+    background: #171717;          
+}
+
+/* 
+ * Div container for each section wrapper.
+ * As we want three Full-screen sections, height and width set to 100%.
+ */
+.full-height {
+    display: table;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+}
+
+/* 
+ * Wrapper for each section defined as a table cell
+ * For one table there is 3 full screen cells.
+ */
+.content-wrapper {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+/*
+ * Section-1 id selector for specific styling.
+ */
+#section-1 {
+    background-color: #fff;
+}
+ 
+/*
+ * Section-2 id selector for specific styling.
+ */  
+#section-2 {
+    background-color: #fff;
+}
+
+/*
+ * Section-3 id selector for specific styling.
+ */
+#section-3 {
+    background-color: #999994;
+}
+
+/**************************** END: ALL CSS QUERIES FOR PAGE LAYOUT / STYLING! ****************************/
+
+
+/**************************** START: ALL CSS QUERIES FOR MENU LAYOUT / STYLING! ****************************/
+
+/*
+ * Vertical menu bar.
+ * fixed menu so it moves onScroll.
+ */
+.menu-bar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    left: 0%;
+    width: 70px;
+    height: 100%;
+    background: #000000;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: 1.0s;    
+    z-index: 150;
+}
+
+/* 
+ * menu span selector for styling span elements.
+ * Burger-Menu functionality.
+ */
+.menu-bar span {     
+    position: absolute;
+    width:35px;
+    height: 1px;
+    background: #fff;
+    display: block;
+    top: 26px;
+    left: 16.25px;
+    transition: 0.5s;  
+}
+
+/*
+ * Select first span object in list.
+ */
+.menu-bar span:nth-child(1) {
+    transform: translateY(-5px);
+}
+
+/*
+ * Select second span object in list.
+ */
+.menu-bar span:nth-child(2) {
+    transform: translateY(5px);
+}
+
+/*
+ * Define functionality for script to target.
+ * if menu-bar is clicked, call CSS and translate first span object.
+ */
+.menu-bar.active span:nth-child(1) {
+    transform: translateY(0.0px);
+}
+
+/*
+ * Define functionality for script to target.
+ * if menu-bar is clicked, call CSS and translate second span object.
+ */
+.menu-bar.active span:nth-child(2) {
+    transform: translateY(-0.0px);
+}
+
+/*
+ * Main menu: when menu-bar is clicked the menu 'opens'
+ * Similar to menu-bar position is fixed.
+ * We hide menu off screen (-100%).
+ */
+.menu {
+    position: fixed;
+    top:0;
+    left:0;
+    width:370px;
+    height:100%;
+    background: #000000;
+    transition: 1.1s;
+    transform: translateX(-100%);
+    z-index: 8;
+}
+
+/*
+ * When JQuery function is instantiated, this query is called.
+ * main menu tranlates into the viewport.
+ */
+.menu.active {
+    transform: translateX(0);
+}
+
+/*
+ * menu-align is div wrapper for the li items.
+ * centers ul horizontally + vertically in menu.
+ */
+.menu-align {
+    display: table;
+    width: 70%;
+    height: 100vh;
+    background: #000000;
+    margin: auto;
+    margin-right: 0;
+}
+
+/*
+ * menu's ul selector
+ */
+.menu ol {
+  display: table-cell;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.menu ul {
+    margin: 50px auto;
+}
+
+.menu .min-menuText {
+    font-size: 1.3em;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI';
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #fff;
+    text-decoration: none;
+    margin: 10px auto;
+    transform: translateX(-100%);
+    transition: 1.5s ease;
+}
+
+.min-menuText.slide {
+    
+    transform: translateX(0%);
+    transition: 1.5s ease;
+}
+
+/*
+ * menu's ul li selector
+ * Sets font size etc for items in list.
+ */
+.menu ul li {
+    font-size: 1.05em;
+    display: inline;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI';
+    list-style:none;
+    margin: 15px auto;
+    display: none;
+}
+
+/*
+ * Style each li (list item) anchor.
+ */
+.menu ul .listStyle a {
+    display: block;
+    color: #999994;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-decoration: none;
+    margin: 15px 0 0 5%;
+}
+
+/*
+ * Mouse hover colour animation for anchors (li items).
+ */
+.menu ul li a:hover {
+    color: darkorange;
+    transition: 0.5s;
+}
+
+/*
+ * Targets the small text before the anchors in the menu.
+ */
+.min-menuText {
+    font-size: 0.55em;
+    margin: 5px auto;
+    color: #424242;
+}
+
+/*
+ * Layer above menu. contains all menu items.
+ * Height set to 90% so clicking button does not also open menu!
+ * Button positioned in top 10% remaining space.
+ */
+.menuClick-div
+{
+    position: absolute;
+    z-index: 50;
+    width: 100%;
+    height: 90%;
+}
+
+/*
+ *  Div wrapper for menu-bar text
+ */
+.menu-navText-div
+{
+    position: absolute;
+    text-align: center;
+    z-index: 1;
+    margin: auto;
+    top: 50%; left: 0; bottom: 0; right: 0;
+}
+
+/*
+ * Styles the "nav" text on the menu-bar
+ */
+.menu-text
+{
+    transform: rotate(-90deg);
+    display: block;
+    margin: 0 auto;  
+    font-size: 1.5em;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+/*
+ * Menu-bar wrapper for containing the onClick (smooth scrolling) button 
+ */
+.menu-button-div
+{
+    text-align: center;
+    z-index: 1;
+    height: 50px;
+    width: 50px;
+    font-size: 40px;
+    color: white;
+    transition: 0.5s;
+    margin: auto;
+    position: absolute;
+    top: 90%; left: 0; bottom: 0; right: 0;
+}
+
+/*
+ * Styles the button itself.
+ */
+#section-scroller-button {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    bottom: 0;
+    height: 90%;
+    width: 100%;
+    background-color: transparent;
+    z-index: 10;
+    cursor: pointer;
+    transition: 0.6s;
+}
+
+/*
+ * Sets basic animation transition time for button.
+ */
+.fa-caret-down
+{
+    transition: 0.6s;     
+}
+
+/*
+ * onClick button hover colour.
+ */
+.fa-caret-down:hover
+{
+    color:darkorange;
+    transition: 0.9s;
+}
+
+/*
+ * disable hover effect on touch devices
+ */
+html.can-touch .fa-caret-down:hover{
+    background: none; 
+}
+
+/*
+ * rotates button once user reaches final section of content.
+ */
+#section-scroller-button.rotate .fa-caret-down {
+    -webkit-transform: rotate(-180deg);
+    -ms-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+    transition: 0.6s;
+}
+
+/**************************** END: ALL CSS QUERIES FOR MENU FUNCTIONALITY / STYLING! ****************************/
+
+
+/**************************** START: ALL CSS QUERIES FOR SECTION1 CONTENT FUNCTIONALITY / STYLING! ****************************/
+
+/*
+ * Styles Section1 name- text element.
+ */
+.title-text
+{
+    font-size: 8em;
+    color: dark-grey;
+    z-index: 1;
+    font-family:'Montserrat', sans-serif;   
+    margin: 0 auto;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    line-height: 0.9em;
+    transition: 0.9s
+}
+
+/*
+ * Styles Section1 portfolio-text element.
+ */
+.port-text
+{
+    font-size: 1.25em;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 40px auto;
+    transition: 0.9s;
+}
+
+/**************************** END: ALL CSS QUERIES FOR SECTION-1 CONTENT FUNCTIONALITY / STYLING! ****************************/
+
+
+/************************************* START: ALL MEDIA QUERIES FUNCTIONALITY / STYLING! *************************************/
+
+/*Media Query for computer Screen Resizing*/
+@media (max-width: 1268px)
+{
+}
+
+/*Media Query for computer Screen Resizing*/
+@media (max-width: 1068px)
+{
+}
+
+/*Media Query for computer Screen Resizing*/
+@media (max-width: 868px)
+{
+}
+
+/*Media Query for computer Screen Resizing and Ipad support*/
+@media (max-width: 768px)
+{   
+    .menu-bar
+    {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 56px;
+        background: #000000;
+        cursor:pointer;
+        box-sizing: border-box;
+        transition: 0.9s;    
+    }
+
+    .menu
+    {
+        position: fixed;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background: #000000;
+        opacity: 0.9;
+        transition: 0.9s;
+        transform: translateY(-100%);
+        z-index: 10;
+    }
+
+    .menu-align
+    {
+        display: table;
+        width: 70%;
+        height: 100vh;
+        background: #000000;
+        margin: auto;
+    }
+    
+    .menu ul
+    {
+      margin: 50px auto;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    .menu ul .listStyle a {
+        margin: 10px auto;
+    }
+    
+    .menu-navText-div
+    {
+        transform: rotate(90deg);
+        transition: 0.9s;
+        opacity: 0;
+    }
+    
+    .menu-button-div
+    {
+        text-align: center;
+        z-index: 1;
+        margin: auto;
+        position: relative;
+        top: 91vh; left: 0; bottom: 0; right: 0;
+        color: black;
+    }
+
+    .title-text
+    {
+        font-size: 4em;
+        color: dark-grey;
+        z-index: 1;
+        font-family:'Montserrat', sans-serif;   
+        margin: 0 auto;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        line-height: 70px;
+    }
+
+    .port-text
+    {
+        font-size: 1em;
+        color: #000;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin: 40px auto;
+    }
+}
+
+/*More Mobile support*/
+@media (max-width: 400px)
+{
+    .title-text{
+        font-size: 3.5em;
+    }
+
+    .port-text{
+        font-size: 0.7em;
+    }
+}
+
+/************************************* END: ALL MEDIA QUERIES FUNCTIONALITY / STYLING! ****************************
