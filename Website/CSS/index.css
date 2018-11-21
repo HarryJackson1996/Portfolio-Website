@@ -301,7 +301,7 @@ body {
  */
 .fa-caret-down:hover
 {
-    color:#ffee10;
+    color: darkorange;
     transition: 0.9s;
 }
 
