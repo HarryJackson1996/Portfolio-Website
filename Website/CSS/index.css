@@ -91,7 +91,7 @@ body {
 .menu-bar span {     
     position: absolute;
     width:35px;
-    height: 2px;
+    height: 1px;
     background: #fff;
     display: block;
     top: 26px;
@@ -368,7 +368,7 @@ html.can-touch .fa-caret-down:hover{
     margin: 0px auto;
     padding: 40px; 
     max-width: 75%;
-    max-height: 90%;
+    max-height: 95%;
 }
 
 /* Defines the card element for all cards */
